@@ -6,14 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather-App</title>
     <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
 </head>
 <body>
     <div class="card">
         <div class="search">
-            <input type="text" placeholder="Enter City Name" spellcheck="false">
-            <button><img src="./images/search.png"></button>
+            <input id="search_box" type="text" placeholder="Enter City Name" spellcheck="false">
+            <button id="search_img"><img src="./images/search.png"></button>
         </div>
-        <div class="weather">
+        <div class="weather not_visible">
             <img src="./images/rain.png" class="weather-icon">
             <h1 class="temp">22'C</h1>
             <h2 class="city">Varanasi</h2>
@@ -34,6 +35,8 @@
                 </div>
             </div>
         </div>
+        
     </div>
+    
 </body>
 </html>

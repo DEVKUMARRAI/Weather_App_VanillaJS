@@ -79,3 +79,10 @@ body{
     font-size: 28px;
     margin-top: -6px;
 }
+
+.visible{
+    display: block;
+}
+.not_visible{
+    display: none;
+}
