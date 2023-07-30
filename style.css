@@ -86,3 +86,6 @@ body{
 .not_visible{
     display: none;
 }
+.Invalid{
+    margin-top: 6px;
+}
