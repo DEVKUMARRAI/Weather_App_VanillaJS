@@ -34,6 +34,7 @@ body{
     flex: 1;
     margin-right: 16px;
     font-size: 16px;
+  
 }
 .search button{
     border: 0;
@@ -89,4 +90,26 @@ body{
 }
 .Invalid{
     margin-top: 6px;
+}
+
+@media (max-width:450px) {
+    .search input{
+        width: 70%;
+        height: 50px;
+    }
+    .search button{
+        height: 50px;
+        width: 50px;
+    }
+    .details {
+        padding: 0px;
+    }
+    .col img {
+        width: 30px;
+        margin-right: 12px;
+    }
+    .humidity, .wind {
+        font-size: 25px;
+        margin-top: -6px;
+    }
 }
