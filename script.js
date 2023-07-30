@@ -7,6 +7,7 @@ const City_Wind = document.querySelector(".wind");
 const City_Temp = document.querySelector(".temp");
 const Weather_Display = document.querySelector(".weather");
 const Invalid_Message = document.querySelector(".Invalid");
+const Weather_Icon=document.querySelector('.weather-icon');
 
 const Api_Key = "80d5db99aa90b0c54b5441b7049000c3";
 async function Weather_Details(CityName) {
@@ -30,12 +31,14 @@ async function Weather_Details(CityName) {
   }
   const response_jsonformat = await response.json();
   const temprature = response_jsonformat.main.temp;
+  const Weather_Image_Status=response_jsonformat.weather[0].main;
   const humidity = response_jsonformat.main.humidity;
   const wind_speed = response_jsonformat.wind.speed;
   return (resp = {
     temp: temprature,
     hum: humidity,
     win: wind_speed,
+    status:Weather_Image_Status
   });
 }
 Search_Img.addEventListener("click", async () => {
@@ -54,5 +57,25 @@ Search_Img.addEventListener("click", async () => {
       (await (await Weather_Details(`${city}`)).win) + "km/h";
     City_Humidity.innerHTML =
       (await (await Weather_Details(`${city}`)).hum) + "%";
+    if((await Weather_Details(`${city}`)).status=="Clouds")
+    {
+       Weather_Icon.src='./images/clouds.png';
+    }
+    else if((await Weather_Details(`${city}`)).status=="Clear")
+    {
+       Weather_Icon.src='./images/clear.png';
+    }
+    else if((await Weather_Details(`${city}`)).status=="Rain")
+    {
+       Weather_Icon.src='./images/rain.png';
+    }
+    else if((await Weather_Details(`${city}`)).status=="Drizzle")
+    {
+       Weather_Icon.src='./images/drizzle.png';
+    }
+    else if((await Weather_Details(`${city}`)).status=="Mist")
+    {
+       Weather_Icon.src='./images/mist.png';
+    }
   }
 });
