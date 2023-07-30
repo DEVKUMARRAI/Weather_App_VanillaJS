@@ -91,6 +91,9 @@ body{
 .Invalid{
     margin-top: 6px;
 }
+.margin_80{
+    margin-right: 80px;
+}
 
 @media (max-width:450px) {
     .search input{
@@ -111,5 +114,8 @@ body{
     .humidity, .wind {
         font-size: 25px;
         margin-top: -6px;
+    }
+    .margin_80{
+        margin-right:10px;
     }
 }
